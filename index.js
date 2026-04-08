@@ -254,7 +254,7 @@ function getLine(){
                 document.createElement("br")
                 for(z in DC_GJ_line){
                     text=document.createElement("p")
-                    text.innerHTML=z
+                    text.innerHTML=DC_GJ_line[z]
                     workDiv.append(text)
                     text=document.createElement("br")
                     workDiv.append(text)
@@ -265,7 +265,7 @@ function getLine(){
                 document.createElement("br")
                 for(z in DC_MS_line){
                     text=document.createElement("p")
-                    text.innerHTML=z
+                    text.innerHTML=DC_MS_line[z]
                     workDiv.append(text)
                     text=document.createElement("br")
                     workDiv.append(text)
@@ -276,7 +276,7 @@ function getLine(){
                 document.createElement("br")
                 for(z in DC_MW_line){
                     text=document.createElement("p")
-                    text.innerHTML=z
+                    text.innerHTML=DC_MW_line[z]
                     workDiv.append(text)
                     text=document.createElement("br")
                     workDiv.append(text)
