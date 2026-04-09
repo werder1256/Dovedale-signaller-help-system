@@ -350,25 +350,173 @@ function getLine(){
 }
 function getDirection(){
     workDiv.innerHTML=""
-    box=boxInput.value
-    destination=boxInput.value
-    if(box.length===2||box.length===3){
-        if(DELineC.includes(box)){
-            boxIndex=DELineC.indexOf(box)
-            if(boxIndex!==0){
-                destIndex=DELineC.indexOf(destination)
-                if (destIndex){
-                    if(destIndex<boxIndex){
-                        text=document.createElement("p")
-                        text.innerHTML="Send the train towards "+DELineC[boxIndex+1]
-                        workDiv.append(text)
-                    }
-                }
-                else{
+    box=boxInput.value.
+    box=box.trim()
+    destination=destInput.value
+    if(destination) {
+        if (box === "DC") {
+            if (DELineC.includes(destination)) {
+                destIndex = DELineC.indexOf(destination)
+                boxIndex = DELineC.indexOf(box)
 
+                console.log("Away from DC")
+                text = document.createElement("p")
+                text.innerHTML = "Send the train towards " + DELineC[boxIndex + 1]
+                workDiv.append(text)
+
+            } else if (DC_GJ_line_C.includes(destination)) {
+                destIndex = DC_GJ_line_C.indexOf(destination)
+                boxIndex = DC_GJ_line_C.indexOf(destination)
+                console.log(destIndex)
+
+                if (destIndex > boxIndex) {
+                    console.log("Away from DC")
+                    text = document.createElement("p")
+                    text.innerHTML = "Send the train towards " + DC_GJ_line_C[boxIndex - 1]
+                    workDiv.append(text)
+                }
+            } else if (DC_MS_line_C.includes(destination)) {
+                destIndex = DC_MS_line_C.indexOf(destination)
+                boxIndex = DC_MS_line_C.indexOf(box)
+                console.log(destIndex)
+
+                console.log("Away from DC")
+                text = document.createElement("p")
+                text.innerHTML = "Send the train towards " + DC_MS_line_C[boxIndex - 1]
+                workDiv.append(text)
+
+            } else if (DC_MW_line_C.includes(destination)) {
+                destIndex = DC_MW_line_C.indexOf(destination)
+                console.log(destIndex)
+                console.log("Away from DC")
+                text = document.createElement("p")
+                text.innerHTML = "Send the train towards " + DC_MW_line_C[boxIndex - 1]
+                workDiv.append(text)
+            }
+        } else if (box === "MC") {
+            console.log(destination)
+            if (DC_MW_line_C.includes(destination)) {
+                destIndex = DC_MW_line_C.indexOf(destination)
+                boxIndex = DC_MW_line_C.indexOf(box)
+                console.log(destIndex)
+                console.log(boxIndex)
+                if (destIndex > boxIndex) {
+                    console.log("Away from DC")
+                    text = document.createElement("p")
+                    text.innerHTML = "Send the train towards " + DC_MW_line_C[boxIndex + 1]
+                    workDiv.append(text)
+                }
+            } else if (DC_MS_line_C.includes(destination)) {
+                destIndex = DC_MS_line_C.indexOf(destination)
+                boxIndex = DC_MS_line_C.indexOf(box)
+                console.log(destIndex)
+                console.log(boxIndex)
+                if (destIndex > boxIndex) {
+                    console.log("Away from DC")
+                    text = document.createElement("p")
+                    text.innerHTML = "Send the train towards " + DC_MS_line_C[boxIndex + 1]
+                    workDiv.append(text)
+                }
+
+            } else if (DC_GJ_line_C.includes(destination)) {
+                destIndex = DC_GJ_line_C.indexOf(destination)
+                boxIndex = DC_GJ_line_C.indexOf(box)
+                console.log(destIndex)
+                console.log(boxIndex)
+                if (destIndex > boxIndex) {
+                    console.log("Away from DC")
+                    text = document.createElement("p")
+                    text.innerHTML = "Send the train towards " + DC_GJ_line_C[boxIndex + 1]
+                    workDiv.append(text)
+                }
+            } else {
+                text = document.createElement("p")
+                text.innerHTML = "Send the train towards Dovedale Central(DC)"
+                workDiv.append(text)
+            }
+        } else if (box.length === 2 || box.length === 3) {
+            if (DELineC.includes(box)) {
+                boxIndex = DELineC.indexOf(box)
+                if (boxIndex !== 0) {
+                    if (DELineC.includes(destination)) {
+                        destIndex = DELineC.indexOf(destination)
+                        console.log(destIndex)
+                        console.log(boxIndex)
+                        if (destIndex > boxIndex) {
+                            console.log("Away from DC")
+                            text = document.createElement("p")
+                            text.innerHTML = "Send the train towards " + DELineC[boxIndex - 1]
+                            workDiv.append(text)
+                        } else {
+                            console.log("towards DC")
+                            text = document.createElement("p")
+                            text.innerHTML = "Send the train towards " + DELineC[boxIndex + 1]
+                            workDiv.append(text)
+                        }
+                    }
                 }
             }
 
+        } else if (DC_GJ_line_C.includes(box)) {
+            boxIndex = DC_GJ_line_C.indexOf(box)
+            if (boxIndex !== 0) {
+                if (DC_GJ_line_C.includes(destination)) {
+                    destIndex = DC_GJ_line_C.indexOf(destination)
+                    console.log(destIndex)
+                    console.log(boxIndex)
+                    if (destIndex > boxIndex) {
+                        console.log("Away from DC")
+                        text = document.createElement("p")
+                        text.innerHTML = "Send the train towards " + DC_GJ_line_C[boxIndex - 1]
+                        workDiv.append(text)
+                    } else {
+                        console.log("towards DC")
+                        text = document.createElement("p")
+                        text.innerHTML = "Send the train towards " + DC_GJ_line_C[boxIndex + 1]
+                        workDiv.append(text)
+                    }
+                }
+            }
+        } else if (DC_MS_line_C.includes(box)) {
+            boxIndex = DC_MS_line_C.indexOf(box)
+            if (boxIndex !== 0) {
+                if (DC_MS_line_C.includes(destination)) {
+                    destIndex = DC_MS_line_C.indexOf(destination)
+                    console.log(destIndex)
+                    console.log(boxIndex)
+                    if (destIndex > boxIndex) {
+                        console.log("Away from DC")
+                        text = document.createElement("p")
+                        text.innerHTML = "Send the train towards " + DC_MS_line_C[boxIndex - 1]
+                        workDiv.append(text)
+                    } else {
+                        console.log("towards DC")
+                        text = document.createElement("p")
+                        text.innerHTML = "Send the train towards " + DC_MS_line_C[boxIndex + 1]
+                        workDiv.append(text)
+                    }
+                }
+            }
+        } else if (DC_MW_line_C.includes(box)) {
+            boxIndex = DC_MS_line_C.indexOf(box)
+            if (boxIndex !== 0) {
+                if (DC_MS_line_C.includes(destination)) {
+                    destIndex = DC_MS_line_C.indexOf(destination)
+                    console.log(destIndex)
+                    console.log(boxIndex)
+                    if (destIndex > boxIndex) {
+                        console.log("Away from DC")
+                        text = document.createElement("p")
+                        text.innerHTML = "Send the train towards " + DC_MS_line_C[boxIndex - 1]
+                        workDiv.append(text)
+                    } else {
+                        console.log("towards DC")
+                        text = document.createElement("p")
+                        text.innerHTML = "Send the train towards " + DC_MS_line_C[boxIndex + 1]
+                        workDiv.append(text)
+                    }
+                }
+            }
         }
     }
 }
