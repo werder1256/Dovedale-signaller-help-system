@@ -357,7 +357,7 @@ function getDirection(){
             boxIndex=DELineC.indexOf(box)
             if(boxIndex!==0){
                 destIndex=DELineC.indexOf(destination)
-                if (destIndex&&destIndex!==DELineC.length){
+                if (destIndex){
                     if(destIndex<boxIndex){
                         text=document.createElement("p")
                         text.innerHTML="Send the train towards "+DELineC[boxIndex+1]
