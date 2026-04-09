@@ -119,8 +119,7 @@ function getLine(){
                     text=document.createElement("p")
                     text.innerHTML=DC_GJ_line_C[z]
                     workDiv.append(text)
-                    text=document.createElement("br")
-                    workDiv.append(text)
+
                 }
                 text=document.createElement("p")
                 text.innerHTML="Line towards Masonfield(MS):"
