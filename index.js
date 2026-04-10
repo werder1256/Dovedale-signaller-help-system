@@ -110,6 +110,19 @@ function getLine(){
                 }
                 stationDis("Dovedale Central(DC)")
             }
+            else if(box==="CH") {
+                text=document.createElement("p")
+                text.innerHTML="Stations on the Dovedale East(DE) Line:"
+                workDiv.append(text)
+                for(i in DELineC){
+                    text=document.createElement("p")
+                    text.innerHTML=DELineC[i]
+                    workDiv.append(text)
+                }
+                text=document.createElement("p")
+                text.innerHTML="For all other destinations, you may assume they should be send towards Dovedale Central(DC)"
+                workDiv.append(text)
+            }
             else if (box==="DC"){
                 text=document.createElement("p")
                 text.innerHTML="Line towards Glassbury Junction(GJ):"
@@ -245,6 +258,19 @@ function getLine(){
                     }
                 }
                 stationDis("Dovedale Central(DC)")
+            }
+            else if(box==="cosdale harbour") {
+                text=document.createElement("p")
+                text.innerHTML="Stations on the Dovedale East(DE) Line:"
+                workDiv.append(text)
+                for(i in DELine){
+                    text=document.createElement("p")
+                    text.innerHTML=DELine[i]
+                    workDiv.append(text)
+                }
+                text=document.createElement("p")
+                text.innerHTML="For all other destinations, you may assume they should be send towards Dovedale Central(DC)"
+                workDiv.append(text)
             }
             else if (box==="dovedale central"){
                 text=document.createElement("p")
@@ -393,7 +419,10 @@ function getDirection(){
                 text.innerHTML = "Send the train towards " + DC_MW_line_C[boxIndex - 1]
                 workDiv.append(text)
             }
-        } else if (box === "MC") {
+
+        }
+
+        else if (box === "MC") {
             console.log(destination)
             if (DC_MW_line_C.includes(destination)) {
                 destIndex = DC_MW_line_C.indexOf(destination)
