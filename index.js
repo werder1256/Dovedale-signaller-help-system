@@ -486,12 +486,12 @@ function getDirection(){
                         if (destIndex < boxIndex) {
                             console.log("Away from DC")
                             text = document.createElement("p")
-                            text.innerHTML = "Send the train towards " + DELineC[boxIndex + 1]
+                            text.innerHTML = "Send the train towards " + DELineC[boxIndex - 1]
                             workDiv.append(text)
                         } else {
                             console.log("towards DC")
                             text = document.createElement("p")
-                            text.innerHTML = "Send the train towards " + DELineC[boxIndex - 1]
+                            text.innerHTML = "Send the train towards " + DELineC[boxIndex + 1]
                             workDiv.append(text)
                         }
                     }
